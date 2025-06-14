@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/web_app/static/css/main.1fd1ab65.css",
+    "main.js": "/web_app/static/js/main.9fcf6f01.js",
+    "static/js/453.a6a97343.chunk.js": "/web_app/static/js/453.a6a97343.chunk.js",
+    "static/media/importancia_chalaneria.png": "/web_app/static/media/importancia_chalaneria.076f67490d919901cb7a.png",
+    "static/media/caballos_juguetones.jpg": "/web_app/static/media/caballos_juguetones.e4c40ffd0cf4b4b3a37a.jpg",
+    "static/media/chalaneria-4563086_1280.jpg": "/web_app/static/media/chalaneria-4563086_1280.6faf726d05e89db0b1f2.jpg",
+    "static/media/7486444.jpg": "/web_app/static/media/7486444.c66dda6a8ba16452df7d.jpg",
+    "static/media/arte_de_ser_jinete.jpg": "/web_app/static/media/arte_de_ser_jinete.1e7215c83920a700001b.jpg",
+    "static/media/estrella_equina.webp": "/web_app/static/media/estrella_equina.7f749f20fe43284ebbb4.webp",
+    "index.html": "/web_app/index.html",
+    "main.1fd1ab65.css.map": "/web_app/static/css/main.1fd1ab65.css.map",
+    "main.9fcf6f01.js.map": "/web_app/static/js/main.9fcf6f01.js.map",
+    "453.a6a97343.chunk.js.map": "/web_app/static/js/453.a6a97343.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1fd1ab65.css",
+    "static/js/main.9fcf6f01.js"
+  ]
+}
