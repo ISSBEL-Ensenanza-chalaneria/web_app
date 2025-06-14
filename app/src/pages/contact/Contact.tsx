@@ -149,7 +149,7 @@ export const Contact: React.FC = () => {
                 placeholder="Número de teléfono"
                 value={phone}
                 onChange={(e) => handleChange(e, index)}
-                pattern="^\\+?[0-9\\s]{7,15}$"
+                pattern="^\\+?[0-9]{7,15}$"
                 title="Ingresa un número válido"
                 required
               />
