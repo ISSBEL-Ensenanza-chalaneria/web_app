@@ -16,11 +16,8 @@ const App: React.FC = () => {
         <main className="content min-h-screen bg-gradient-to-b from-sky-100 to-white text-gray-900 px-4 md:px-12 lg:px-24 py-8">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/web_app/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/web_app/blog" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
-            <Route path="/web_app/contacto" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
