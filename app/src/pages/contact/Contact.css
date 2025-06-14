@@ -1,0 +1,125 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 78vh;
+  padding: 20px;
+}
+
+.row.main-content {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.company__info {
+  background-color: #64431d;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.fa-android {
+  font-size: 3em;
+}
+
+.row > h2 {
+  color: #64431d;
+}
+
+.login_form {
+  background-color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+form {
+  padding: 0 2em;
+}
+
+.form__input {
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+  padding: 1em 0.5em 0.5em;
+  padding-left: 2em;
+  outline: none;
+  margin: 1.5em auto;
+  transition: all 0.5s ease;
+}
+
+.form__input:focus {
+  border-bottom-color: #008080;
+  box-shadow: 0 0 5px rgba(0, 80, 80, 0.4);
+  border-radius: 4px;
+}
+
+.submit-btn {
+  transition: all 0.5s ease;
+  width: 30%;
+  border-radius: 30px;
+  color: #008080;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid #008080;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #008080;
+  color: #fff;
+}
+
+.response-message {
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.response-message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.response-message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .row.main-content {
+    max-width: 600px;
+    height: f;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .main-content {
+    width: 90%;
+  }
+
+  .company__info {
+    display: none;
+  }
+
+  .login_form {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
