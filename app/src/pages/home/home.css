@@ -1,0 +1,90 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Hero section estilo fluid */
+.hero-container {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-light);
+  padding: 1rem;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+}
+
+/* Info section */
+.section-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.section-info img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-text p {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+.section-info.reverse {
+  direction: rtl;
+}
+
+.section-info.reverse .section-text,
+.section-info.reverse .section-image {
+  direction: ltr;
+}
+
+@media (min-width: 768px) {
+  .section-info {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 4rem;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
+  }
+}

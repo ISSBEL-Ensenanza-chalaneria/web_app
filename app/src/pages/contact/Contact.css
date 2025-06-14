@@ -1,85 +1,70 @@
-.contact {
+/* contact.css */
+
+.contact-fullscreen {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 78vh;
-  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f3eee9, #ffffff);
+  padding: 2rem;
 }
 
-.row.main-content {
+.contact-form-wrapper {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 500px;
   width: 100%;
-  max-width: 800px;
-  border-radius: 20px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.company__info {
-  background-color: #64431d;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #fff;
-}
-
-.fa-android {
-  font-size: 3em;
-}
-
-.row > h2 {
+.contact-form-wrapper h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
   color: #64431d;
+  margin-bottom: 2rem;
 }
 
-.login_form {
-  background-color: #fff;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-
-form {
-  padding: 0 2em;
-}
-
-.form__input {
-  width: 100%;
-  border: 0px solid transparent;
-  border-radius: 0;
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid #aaa;
-  padding: 1em 0.5em 0.5em;
-  padding-left: 2em;
-  outline: none;
-  margin: 1.5em auto;
-  transition: all 0.5s ease;
+  padding-bottom: 0.5rem;
 }
 
-.form__input:focus {
-  border-bottom-color: #008080;
-  box-shadow: 0 0 5px rgba(0, 80, 80, 0.4);
-  border-radius: 4px;
+.form-group input,
+.form-group select {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.add-phone-btn {
+  background: none;
+  color: #00695c;
+  border: none;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1.5rem;
+  cursor: pointer;
 }
 
 .submit-btn {
-  transition: all 0.5s ease;
-  width: 30%;
-  border-radius: 30px;
-  color: #008080;
-  font-weight: 600;
-  background-color: #fff;
-  border: 1px solid #008080;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+  background-color: #64431d;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover,
-.btn:focus {
-  background-color: #008080;
-  color: #fff;
+.submit-btn:hover {
+  background-color: #53381a;
 }
 
 .response-message {
@@ -87,7 +72,7 @@ form {
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .response-message.success {
@@ -102,24 +87,8 @@ form {
   border: 1px solid #f5c6cb;
 }
 
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  .row.main-content {
-    max-width: 600px;
-    height: f;
-  }
-}
-
 @media screen and (max-width: 640px) {
-  .main-content {
-    width: 90%;
-  }
-
-  .company__info {
-    display: none;
-  }
-
-  .login_form {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+  .contact-form-wrapper {
+    padding: 2rem 1.25rem;
   }
 }

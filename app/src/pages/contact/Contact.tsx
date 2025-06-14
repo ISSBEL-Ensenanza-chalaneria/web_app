@@ -1,9 +1,10 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import "./Contact.css";
 import { registerUser } from "../../api/userService";
 
 interface FormData {
   idType: string;
-  id: string;
+  id: number;
   name: string;
   email: string;
   phones: string[];
@@ -17,7 +18,7 @@ interface ResponseMessage {
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     idType: "",
-    id: "",
+    id: 0,
     name: "",
     email: "",
     phones: [""],
@@ -49,11 +50,13 @@ export const Contact: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const payload = {
-      idType: formData.idType,
       id: formData.id,
-      name: formData.name,
-      email: formData.email,
-      phones: formData.phones.map((phone) => ({ number: phone })),
+      idType: formData.idType,
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phones: formData.phones
+        .filter((p) => p.trim() !== "")
+        .map((phone) => ({ number: phone })),
     };
 
     try {
@@ -72,102 +75,97 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 py-8 items-center">
-      <img
-        src={
-          "https://cdn.pixabay.com/photo/2018/05/02/20/54/horse-3367014_1280.jpg"
-        }
-        alt="Chalanería"
-        className="rounded-xl shadow-lg"
-      />
-
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold text-gray-800">
-          Déjanos tus datos, te contactaremos lo antes posible
-        </h2>
+    <div className="contact-fullscreen">
+      <div className="contact-form-wrapper">
+        <h2>Contáctanos</h2>
 
         {responseMessage.text && (
           <p
-            className={`text-sm font-medium px-4 py-2 rounded-md ${
-              responseMessage.isError
-                ? "bg-red-100 text-red-700"
-                : "bg-green-100 text-green-700"
+            className={`response-message ${
+              responseMessage.isError ? "error" : "success"
             }`}
           >
             {responseMessage.text}
           </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <select
-            name="idType"
-            className="w-full border rounded px-4 py-2"
-            value={formData.idType}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Tipo de identificación</option>
-            <option value="CC">CC</option>
-            <option value="TI">TI</option>
-            <option value="CE">CE</option>
-            <option value="PASSPORT">PASSPORT</option>
-          </select>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <select
+              name="idType"
+              value={formData.idType}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Tipo de identificación</option>
+              <option value="CC">Cédula</option>
+              <option value="TI">Tarjeta de Identidad</option>
+              <option value="CE">Cédula Extranjera</option>
+              <option value="PASSPORT">Pasaporte</option>
+            </select>
+          </div>
 
-          <input
-            type="text"
-            name="id"
-            placeholder="Número de identificación"
-            className="w-full border rounded px-4 py-2"
-            value={formData.id}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Nombre completo"
-            className="w-full border rounded px-4 py-2"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            className="w-full border rounded px-4 py-2"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-
-          {formData.phones.map((phone, index) => (
+          <div className="form-group">
             <input
-              key={index}
-              type="text"
-              placeholder="Número de teléfono"
-              className="w-full border rounded px-4 py-2"
-              value={phone}
-              onChange={(e) => handleChange(e, index)}
+              type="number"
+              name="id"
+              placeholder="Número de identificación"
+              value={formData.id}
+              onChange={handleChange}
+              min={1}
+              max={999999999999}
               required
             />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre completo"
+              value={formData.name}
+              onChange={handleChange}
+              minLength={3}
+              maxLength={250}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {formData.phones.map((phone, index) => (
+            <div className="form-group" key={index}>
+              <input
+                type="tel"
+                placeholder="Número de teléfono"
+                value={phone}
+                onChange={(e) => handleChange(e, index)}
+                pattern="^\\+?[0-9\\s]{7,15}$"
+                title="Ingresa un número válido"
+                required
+              />
+            </div>
           ))}
 
           <button
             type="button"
             onClick={handleAddPhone}
-            className="text-blue-600 hover:underline text-sm"
+            className="add-phone-btn"
           >
             + Añadir teléfono
           </button>
 
-          <button
-            type="submit"
-            className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
-          >
-            Enviar
+          <button type="submit" className="submit-btn">
+            Enviar mensaje
           </button>
         </form>
       </div>

@@ -5,9 +5,8 @@ import "./Header.css";
 const Header: React.FC = () => (
   <header className="header">
     <div className="header-logo">Iss-bel</div>
-    <nav className="header-nav">
+    <nav>
       <Link to="/">Inicio</Link>
-      <Link to="/services">Servicios</Link>
       <Link to="/blog">Blog</Link>
       <Link to="/contacto">Contácto</Link>
     </nav>
